@@ -1,3 +1,8 @@
+set positional-arguments
+
+@add env:
+  touch $1.Dockerfile
+  touch $1.env.sh
 build-dotnet:
   cat base.Dockerfile dotnet.Dockerfile user.Dockerfile > Dockerfile
   docker build -t devenv/dotnet -q .
